@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Input Number</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Test Input Number</h1>
+        <div class="input-number">
+            <input id="field" class="input-number__field" type="number" min="0" value="0" step="1">
+            <div class="input-number__buttons">
+                <button id="remove" class="input-number__buttons__remove"><span class="material-icons">remove</span></button>
+                <button id="add" class="input-number__buttons__add"><span class="material-icons">add</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var field = document.getElementById("field")
+    var remove = document.getElementById("remove")
+    var add = document.getElementById("add")
+
+    remove.addEventListener("click", function(){
+        var value = field.value
+        if(value > 0){
+            field.value = --value
+        }
+    })
+
+    add.addEventListener("click", function(){
+        var value = field.value
+        field.value = ++value
+    })
+</script>
+</html>
